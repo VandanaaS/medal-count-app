@@ -1,19 +1,16 @@
+import styles from "../styles/Flag.module.css";
 interface FlagProps {
   countryIndex: number;
 }
 
 export default function Flag({ countryIndex }: FlagProps) {
+  const offset = -countryIndex * 16;
   return (
     <div
-      style={{
-        width: 24,
-        height: 16,
-        backgroundImage: "url(/flags.png)",
-        backgroundPosition: `0 -${countryIndex * 16}px`,
-        backgroundSize: "100% auto",
-        display: "inline-block",
-        border: "1px solid #ccc",
-      }}
+      className={styles.flag}
+      style={{ backgroundPosition: `0 ${offset}px` }}
+      role="img"
+      aria-label="flag"
     />
   );
 }

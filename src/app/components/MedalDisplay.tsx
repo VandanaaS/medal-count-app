@@ -1,4 +1,5 @@
 import Flag from "../components/Flag";
+import styles from "../styles/MedalsDisplay.module.css";
 
 export default function MedalGrid({
   data,
@@ -7,7 +8,6 @@ export default function MedalGrid({
   flagIndexMap,
 }) {
   const getArrow = (key) => (sortKey === key ? "▼" : "");
-
   return (
     <div className="container mt-4">
       <h4 className="text-primary fw-bold mb-3">MEDAL COUNT</h4>
@@ -18,29 +18,28 @@ export default function MedalGrid({
         <div className="col-1">Flag</div>
         <div className="col-2">Country</div>
         <div
-          className="col-1"
-          role="button"
+          className={`col-1 text-warning ${styles.sortable}`}
           onClick={() => onSortChange("gold")}
         >
           🥇 {getArrow("gold")}
         </div>
+
         <div
-          className="col-1"
-          role="button"
+          className={`col-1 text-secondary ${styles.sortable}`}
           onClick={() => onSortChange("silver")}
         >
           🥈 {getArrow("silver")}
         </div>
+
         <div
-          className="col-1"
-          role="button"
+          className={`col-1 ${styles.bronze} ${styles.sortable}`}
           onClick={() => onSortChange("bronze")}
         >
           🥉 {getArrow("bronze")}
         </div>
+
         <div
-          className="col-2"
-          role="button"
+          className={`col-2 ${styles.sortable}`}
           onClick={() => onSortChange("total")}
         >
           🏅 Total {getArrow("total")}
