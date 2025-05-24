@@ -1,7 +1,7 @@
 import Flag from "../components/Flag";
 import styles from "../styles/MedalsDisplay.module.css";
 
-export default function MedalGrid({
+export default function MedalDisplay({
   data,
   sortKey,
   onSortChange,
@@ -21,28 +21,52 @@ export default function MedalGrid({
           className={`col-1 text-warning ${styles.sortable}`}
           onClick={() => onSortChange("gold")}
         >
-          🥇 {getArrow("gold")}
+          <svg width="14" height="14" viewBox="0 0 100 100" className="me-1">
+            <polygon
+              points="50,0 93,25 93,75 50,100 7,75 7,25"
+              fill="#FFD700"
+            />
+          </svg>
+          {getArrow("gold")}
         </div>
 
         <div
           className={`col-1 text-secondary ${styles.sortable}`}
           onClick={() => onSortChange("silver")}
         >
-          🥈 {getArrow("silver")}
+          <svg width="14" height="14" viewBox="0 0 100 100" className="me-1">
+            <polygon
+              points="50,0 93,25 93,75 50,100 7,75 7,25"
+              fill="#C0C0C0"
+            />
+          </svg>
+          {getArrow("silver")}
         </div>
 
         <div
           className={`col-1 ${styles.bronze} ${styles.sortable}`}
           onClick={() => onSortChange("bronze")}
         >
-          🥉 {getArrow("bronze")}
+          <svg width="14" height="14" viewBox="0 0 100 100" className="me-1">
+            <polygon
+              points="50,0 93,25 93,75 50,100 7,75 7,25"
+              fill="#CD7F32"
+            />
+          </svg>
+          {getArrow("bronze")}
         </div>
 
         <div
           className={`col-2 ${styles.sortable}`}
           onClick={() => onSortChange("total")}
         >
-          🏅 Total {getArrow("total")}
+          <svg width="14" height="14" viewBox="0 0 100 100" className="me-1">
+            <polygon
+              points="50,0 93,25 93,75 50,100 7,75 7,25"
+              fill="#6c757d"
+            />
+          </svg>
+          Total {getArrow("total")}
         </div>
       </div>
 
